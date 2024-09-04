@@ -6,9 +6,10 @@ const languageOptions = computed(() => [
 	{ value: 'de', title: t('settings.general.fields.language.options.de.title') },
 	{ value: 'en', title: t('settings.general.fields.language.options.en.title') },
 	{ value: 'it', title: t('settings.general.fields.language.options.it.title') },
+	{ value: 'fr', title: t('settings.general.fields.language.options.fr.title') },
 ])
 
-const langIsAiGenerated = computed(() => ['it'].includes(settings.value.general.language))
+const langIsAiGenerated = computed(() => ['it', 'fr'].includes(settings.value.general.language))
 </script>
 <template>
 	<form>

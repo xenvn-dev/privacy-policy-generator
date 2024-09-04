@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { useTheme } from 'vuetify'
-const { locale: currentLocale, locales: availableLocales } = useI18n()
+const { locale: currentLocale, locales: availableLocales, localeProperties } = useI18n()
 const theme = useTheme()
+const router = useRouter()
 const switchLocalePath = useSwitchLocalePath()
 const toggleTheme = () =>
 	(theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark')
@@ -41,14 +42,26 @@ const themeIcon = computed(() =>
 				@click="toggleTheme"
 			></v-btn>
 			<v-divider vertical class="mx-3"></v-divider>
-			<v-btn-toggle mandatory divided class="relative z-0 inline-flex" color="primary">
-				<v-btn
-					v-for="locale in availableLocales"
-					:key="locale.code"
-					:to="switchLocalePath(locale.code)"
-					>{{ locale.code }}</v-btn
-				>
-			</v-btn-toggle>
+			<v-menu>
+				<template #activator="{ props }">
+					<v-btn color="primary" variant="elevated" v-bind="props">
+						<v-icon icon="mdi-web" class="mr-2"></v-icon>
+						{{ localeProperties.name }}
+					</v-btn>
+				</template>
+
+				<v-list>
+					<v-list-item
+						v-for="locale in availableLocales"
+						:key="locale.code"
+						@click="router.push({ path: switchLocalePath(locale.code) })"
+					>
+						<v-list-item-title>
+							{{ locale.name }}
+						</v-list-item-title>
+					</v-list-item>
+				</v-list>
+			</v-menu>
 		</template>
 	</v-app-bar>
 </template>
