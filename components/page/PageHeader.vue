@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { useTheme } from 'vuetify'
 
-const { locale: currentLocale, locales: availableLocales, localeProperties } = useI18n()
+const { locales: availableLocales, localeProperties, } = useI18n()
 const theme = useTheme()
 const router = useRouter()
+const localePath = useLocalePath()
 const switchLocalePath = useSwitchLocalePath()
 const toggleTheme = () =>
 	(theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark')
@@ -18,7 +19,7 @@ const themeIcon = computed(() =>
 		<template #prepend>
 			<v-app-bar-nav-icon>
 				<NuxtLink
-					:to="`/${currentLocale}`"
+					:to="localePath('/')"
 					class="unstyled"
 					:title="$t('general.back_to_home')"
 				>
