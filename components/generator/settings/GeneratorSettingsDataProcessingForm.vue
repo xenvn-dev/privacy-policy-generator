@@ -53,6 +53,9 @@ const processingModel = computed(() =>
 )
 
 const addProcessing = () => {
+	if (newProcessing.processor.id === undefined) {
+		newProcessing.processor.id = window.crypto.randomUUID()
+	}
 	const newProcessingArrayLength = settings.value.dataProcessings[props.category].push({
 		...newProcessing,
 	})
