@@ -131,7 +131,7 @@ const processorOptions = computed(() => {
 	options.push(
 		...defaultProcessors.flatMap((processor) => {
 			// Only add default processor, if not already used.
-			if (!options.find(option => processor.id === option.key)) {
+			if (!options.find(option => processor.id === option.value)) {
 				return generateOption(processor)
 			}
 			return []
