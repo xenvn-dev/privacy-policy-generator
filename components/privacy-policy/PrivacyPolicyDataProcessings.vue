@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps({
+const props = defineProps({
 	items: {
 		type: Array as () => DataProcessing[],
 		required: true,
@@ -8,12 +8,14 @@ defineProps({
 		type: String as () => DataProcessingCategory,
 		required: true,
 	},
+	locale: {
+		type: String,
+		required: true,
+	},
 })
 const { getCountryName } = useCountries()
-const settings = useSettings()
 const { processTitle } = usePresenter(true)
-const locale = computed(() => settings.value.general.language)
-const t = (keypath: string) => useI18n().t(keypath, 1, { locale: locale.value })
+const t = (keypath: string) => useI18n().t(keypath, 1, { locale: props.locale })
 </script>
 
 <template>

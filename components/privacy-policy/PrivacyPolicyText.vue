@@ -136,6 +136,7 @@ const usesBrowserStore = computed(() =>
 			</ul>
 			<p>{{ t('privacy_policy.data_processing.webhosting.content.p2') }}</p>
 			<PrivacyPolicyDataProcessings
+				:locale="settings.general.language"
 				category="webhosting"
 				:items="settings.dataProcessings.webhosting"
 			/>
@@ -150,6 +151,7 @@ const usesBrowserStore = computed(() =>
 			<p>{{ t('privacy_policy.data_processing.tagmanager.content.p2') }}</p>
 
 			<PrivacyPolicyDataProcessings
+				:locale="settings.general.language"
 				category="tagmanager"
 				:items="settings.dataProcessings.tagmanager"
 			/>
@@ -165,6 +167,7 @@ const usesBrowserStore = computed(() =>
 			<p>{{ t('privacy_policy.data_processing.analytics.content.p2') }}</p>
 
 			<PrivacyPolicyDataProcessings
+				:locale="settings.general.language"
 				category="analytics"
 				:items="settings.dataProcessings.analytics"
 			/>
@@ -176,7 +179,9 @@ const usesBrowserStore = computed(() =>
 			<p>{{ t('privacy_policy.data_processing.maps.content.p2') }}</p>
 			<p>{{ t('privacy_policy.data_processing.maps.content.p3') }}</p>
 
-			<PrivacyPolicyDataProcessings category="maps" :items="settings.dataProcessings.maps" />
+			<PrivacyPolicyDataProcessings
+				:locale="settings.general.language" category="maps" :items="settings.dataProcessings.maps"
+			/>
 		</section>
 
 		<section
@@ -189,6 +194,7 @@ const usesBrowserStore = computed(() =>
 			<p>{{ t('privacy_policy.data_processing.videos.content.p3') }}</p>
 
 			<PrivacyPolicyDataProcessings
+				:locale="settings.general.language"
 				category="videos"
 				:items="settings.dataProcessings.videos"
 			/>
@@ -203,6 +209,7 @@ const usesBrowserStore = computed(() =>
 			<p>{{ t('privacy_policy.data_processing.send_emails.content.p2') }}</p>
 
 			<PrivacyPolicyDataProcessings
+				:locale="settings.general.language"
 				category="emails"
 				:items="settings.dataProcessings.emails"
 			/>
@@ -217,6 +224,7 @@ const usesBrowserStore = computed(() =>
 			<p>{{ t('privacy_policy.data_processing.payment.content.p2') }}</p>
 
 			<PrivacyPolicyDataProcessings
+				:locale="settings.general.language"
 				category="payment"
 				:items="settings.dataProcessings.payment"
 			/>
@@ -231,6 +239,7 @@ const usesBrowserStore = computed(() =>
 			<p>{{ t('privacy_policy.data_processing.advertising.content.p2') }}</p>
 
 			<PrivacyPolicyDataProcessings
+				:locale="settings.general.language"
 				category="advertising"
 				:items="settings.dataProcessings.advertising"
 			/>
@@ -245,6 +254,7 @@ const usesBrowserStore = computed(() =>
 			<p>{{ t('privacy_policy.data_processing.booking.content.p2') }}</p>
 
 			<PrivacyPolicyDataProcessings
+				:locale="settings.general.language"
 				category="booking"
 				:items="settings.dataProcessings.booking"
 			/>

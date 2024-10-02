@@ -1,14 +1,16 @@
 <script setup lang="ts">
-defineProps({
+const props = defineProps({
 	browserStoreItems: {
 		type: Array as () => BrowserStore[],
 		required: true,
 	},
+	locale: {
+		type: String,
+		required: true,
+	},
 })
 const { humanizedDuration } = usePresenter(true)
-const settings = useSettings()
-const locale = computed(() => settings.value.general.language)
-const t = (keypath: string) => useI18n().t(keypath, 1, { locale: locale.value })
+const t = (keypath: string) => useI18n().t(keypath, 1, { locale: props.locale })
 const getDuration = (browserStore: BrowserStore) => {
 	switch (browserStore.type) {
 		case 'cookie':
