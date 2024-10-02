@@ -117,7 +117,7 @@ const processorOptions = computed(() => {
 		options.push(
 			{
 				title: t('settings.data_processings.used_processors'),
-				value: 'header',
+				value: 'used_processors_header',
 				props: { disabled: true },
 			},
 			...usedProcessors.value.map(processor => generateOption(processor))
@@ -125,7 +125,7 @@ const processorOptions = computed(() => {
 	}
 	options.push({
 		title: t('settings.data_processings.default_processors'),
-		value: 'header',
+		value: 'default_processors_header',
 		props: { disabled: true },
 	})
 	options.push(
