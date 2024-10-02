@@ -6,8 +6,8 @@ const getStyle = (ratio: number): string => `transform:translate3d(0,-${y.value 
 
 <template>
 	<div class="parallax-bg">
-		<div class="background" :style="getStyle(0.3)" />
-		<div class="flower-ornament" :style="getStyle(0.1)" />
+		<div class="background" :style="getStyle(0.3)" data-allow-mismatch />
+		<div class="flower-ornament" :style="getStyle(0.1)" data-allow-mismatch />
 	</div>
 </template>
 
