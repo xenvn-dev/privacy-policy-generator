@@ -1,5 +1,5 @@
 export const usePresenter = (useSettingsLocale = false) => {
-	const { locale: currentLocale } = useI18n()
+	const { locale: currentLocale, t: i18nT } = useI18n()
 	const durationOptions = useDurationOptions()
 	const { humanizeMinutes } = useHumanizedDuration()
 	const settings = useSettings()
@@ -9,7 +9,7 @@ export const usePresenter = (useSettingsLocale = false) => {
 	const locale = computed(() =>
 		useSettingsLocale ? settings.value.general.language : currentLocale.value
 	)
-	const t = (keypath: string) => useI18n().t(keypath, 1, { locale: locale.value })
+	const t = (keypath: string) => i18nT(keypath, 1, { locale: locale.value })
 	const processTitle = (process: DataProcessing, category: DataProcessingCategory) => {
 		const serviceName
 			= process.service && process.service.length > 0
