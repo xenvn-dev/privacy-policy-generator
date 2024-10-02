@@ -11,8 +11,8 @@ export default defineNuxtConfig({
 		'@nuxtjs/tailwindcss',
 		'@nuxtjs/sitemap',
 		'@vueuse/nuxt',
-		'@invictus.codes/nuxt-vuetify',
-		'@nuxt/eslint'
+		'@nuxt/eslint',
+		'vuetify-nuxt-module'
 	],
 	css: [
 		'@fontsource/roboto/300.css',
@@ -80,7 +80,7 @@ export default defineNuxtConfig({
 		},
 	},
 
-	// https://nuxt.com/modules/nuxt-vuetify
+	// https://nuxt.com/modules/vuetify-nuxt-module
 	vuetify: {
 		/* vuetify options */
 		vuetifyOptions: {
