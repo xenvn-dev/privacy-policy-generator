@@ -45,7 +45,7 @@ const { value, handleBlur, handleChange, errors } = useField(toRef(props, 'name'
 		:return-object="false"
 		@blur="handleBlur"
 		@input="handleChange"
-		@update:modelValue="handleChange"
+		@update:model-value="handleChange"
 	>
 		<template v-if="$slots.prepend" #prepend>
 			<slot name="prepend" />

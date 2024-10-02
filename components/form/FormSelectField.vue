@@ -50,7 +50,7 @@ const { value, handleBlur, handleChange, errors } = useField(toRef(props, 'name'
 		persistent-hint
 		@blur="handleBlur"
 		@input="handleChange"
-		@update:modelValue="handleChange"
+		@update:model-value="handleChange"
 	>
 		<template #prepend-item>
 			<slot name="prepend-item" />
@@ -67,7 +67,7 @@ const { value, handleBlur, handleChange, errors } = useField(toRef(props, 'name'
 		:clearable="clearable"
 		@blur="handleBlur"
 		@input="handleChange"
-		@update:modelValue="handleChange"
+		@update:model-value="handleChange"
 	>
 		<template #prepend-item>
 			<slot name="prepend-item" />

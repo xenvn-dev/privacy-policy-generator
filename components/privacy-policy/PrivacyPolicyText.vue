@@ -12,11 +12,12 @@ const locale = computed(() => props.settings.general.language)
 const t = (keypath: string) => useI18n().t(keypath, 1, { locale: locale.value })
 
 const usesBrowserStore = computed(() =>
-	Object.values(props.settings.dataProcessings).some((category) =>
-		category.some((process) => process.browserStore && process.browserStore.length > 0)
+	Object.values(props.settings.dataProcessings).some(category =>
+		category.some(process => process.browserStore && process.browserStore.length > 0)
 	)
 )
 </script>
+
 <template>
 	<h1>{{ t('privacy_policy.title') }}</h1>
 	<p>{{ t('privacy_policy.intro_content.p1') }}</p>
@@ -62,27 +63,25 @@ const usesBrowserStore = computed(() =>
 		<p>{{ t('privacy_policy.data_controller.content.p1') }}</p>
 		<address>
 			<template v-if="settings.dataController.organization">
-				{{ settings.dataController.organization }}<br />
+				{{ settings.dataController.organization }}<br>
 			</template>
-			<template v-if="settings.dataController.name"
-				>{{ settings.dataController.name }}<br
-			/></template>
+			<template v-if="settings.dataController.name">
+				{{ settings.dataController.name }}<br>
+			</template>
 			<template v-if="settings.dataController.street">
-				{{ settings.dataController.street }}<br />
+				{{ settings.dataController.street }}<br>
 			</template>
 			<template v-if="settings.dataController.zip && settings.dataController.city">
-				{{ settings.dataController.zip }} {{ settings.dataController.city }}<br />
+				{{ settings.dataController.zip }} {{ settings.dataController.city }}<br>
 			</template>
 			<template v-if="settings.dataController.country">
-				{{ getCountryName(settings.dataController.country, locale) }}<br />
+				{{ getCountryName(settings.dataController.country, locale) }}<br>
 			</template>
 			<template v-if="settings.dataController.email">
-				<a :href="'mailto:' + settings.dataController.email"
-					>{{ settings.dataController.email }}<br
-				/></a>
+				<a :href="`mailto:${settings.dataController.email}`">{{ settings.dataController.email }}<br></a>
 			</template>
 			<template v-if="settings.dataController.phone">
-				<a :href="'tel:' + settings.dataController.phone">{{
+				<a :href="`tel:${settings.dataController.phone}`">{{
 					settings.dataController.phone
 				}}</a>
 			</template>

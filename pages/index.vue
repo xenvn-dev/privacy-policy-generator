@@ -22,8 +22,8 @@ const hasErrors = computed(() => !hasWebhostingProcessing.value || hasSettingsEr
 								src="/logo.svg"
 								:alt="$t('images.logo.alt')"
 								:title="$t('meta.site.title')"
-								class="mx-auto mb-8 h-60 w-60 drop-shadow-primary md:mb-0 md:mr-10 animation-cowmove"
-							/>
+								class="animation-cowmove mx-auto mb-8 size-60 drop-shadow-primary md:mb-0 md:mr-10"
+							>
 							<h1
 								class="text-3xl font-extrabold tracking-tight sm:text-5xl md:text-left"
 							>
@@ -31,8 +31,7 @@ const hasErrors = computed(() => !hasWebhostingProcessing.value || hasSettingsEr
 								{{ ' ' }}
 								<span
 									class="block text-4xl text-primary-100 drop-shadow-primary dark:text-primary-500 sm:text-6xl"
-									>{{ $t('h1.line2') }}</span
-								>
+								>{{ $t('h1.line2') }}</span>
 							</h1>
 						</div>
 						<div
@@ -54,7 +53,7 @@ const hasErrors = computed(() => !hasWebhostingProcessing.value || hasSettingsEr
 				</div>
 			</div>
 
-			<v-divider></v-divider>
+			<v-divider />
 			<v-container v-if="hasErrors">
 				<v-alert v-if="!hasWebhostingProcessing" type="error">
 					{{ $t('errors.missing_webhosting_data_processing') }}

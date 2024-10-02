@@ -23,6 +23,7 @@ const copyHtml = () => {
 	showCopyMessage.value = true
 }
 const copyText = () => {
+	// eslint-disable-next-line unicorn/prefer-dom-node-text-content
 	const text: string = privacyPolicy.value.innerText
 	navigator.clipboard.writeText(text)
 	showCopyMessage.value = true
@@ -33,13 +34,22 @@ const copyMarkdown = () => {
 	showCopyMessage.value = true
 }
 </script>
+
 <template>
 	<v-card class="m-default-sm sticky right-0 top-20 float-right">
-		<v-card-title class="text-center">{{ $t('general.copy_to_clipboard') }}</v-card-title>
+		<v-card-title class="text-center">
+			{{ $t('general.copy_to_clipboard') }}
+		</v-card-title>
 		<v-card-text class="flex justify-evenly gap-3">
-			<v-btn @click="copyHtml()">{{ $t('general.copy_html') }}</v-btn>
-			<v-btn @click="copyText()">{{ $t('general.copy_text') }}</v-btn>
-			<v-btn @click="copyMarkdown()">{{ $t('general.copy_markdown') }}</v-btn>
+			<v-btn @click="copyHtml()">
+				{{ $t('general.copy_html') }}
+			</v-btn>
+			<v-btn @click="copyText()">
+				{{ $t('general.copy_text') }}
+			</v-btn>
+			<v-btn @click="copyMarkdown()">
+				{{ $t('general.copy_markdown') }}
+			</v-btn>
 			<v-snackbar v-model="showCopyMessage" color="primary" timeout="2000" location="top">
 				{{ $t('general.copy_successful') }}
 				<template #actions>

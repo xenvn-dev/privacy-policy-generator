@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import { useForm } from 'vee-validate'
-const { humanizedDuration, formOptions } = usePresenter()
-const durationOptions = useDurationOptions()
 
 const props = defineProps({
 	modelValue: {
@@ -9,12 +7,13 @@ const props = defineProps({
 		required: true,
 	},
 })
-
 const emit = defineEmits(['update:modelValue', 'hasErrors'])
+const { humanizedDuration, formOptions } = usePresenter()
+const durationOptions = useDurationOptions()
 
 const model = computed({
 	get: () => props.modelValue,
-	set: (value) => emit('update:modelValue', value),
+	set: value => emit('update:modelValue', value),
 })
 
 const typeOptionValues: BrowserStoreType[] = [
@@ -67,6 +66,7 @@ watch(errors, (newErrors) => {
 	emit('hasErrors', Object.keys(newErrors).length > 0)
 })
 </script>
+
 <template>
 	<FormTextField
 		v-model="model.name"
@@ -109,5 +109,5 @@ watch(errors, (newErrors) => {
 		v-model="model.thirdParty"
 		:label="$t('settings.data_processings.fields.browser_store.third_party.title')"
 		name="thirdParty"
-	></FormSwitch>
+	/>
 </template>

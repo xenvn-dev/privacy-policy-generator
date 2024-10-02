@@ -1,7 +1,4 @@
 <script setup lang="ts">
-const settings = useSettings()
-const presenter = usePresenter()
-
 defineProps({
 	category: {
 		type: [String as () => DataProcessingCategory],
@@ -13,10 +10,11 @@ defineProps({
 		default: false,
 	},
 })
-
 const emit = defineEmits<{
 	(e: 'hasErrors', state: boolean): void
 }>()
+const settings = useSettings()
+const presenter = usePresenter()
 
 const errorStates = ref({})
 
@@ -25,7 +23,7 @@ const setErrorState = (key: number, hasErrors: boolean) => {
 }
 
 const hasErrors = computed(() => {
-	return Object.values(errorStates.value).some((error) => error)
+	return Object.values(errorStates.value).some(error => error)
 })
 
 watch(hasErrors, (hasErrors) => {
@@ -45,6 +43,7 @@ const dataProcessingUpdated = () => {
 	expansionPanels.value?.$el.scrollIntoView(true)
 }
 </script>
+
 <template>
 	<h4>{{ $t(`settings.data_processings.categories.${category}.title`) }}</h4>
 	<p>
@@ -59,7 +58,8 @@ const dataProcessingUpdated = () => {
 				<GeneratorSettingsDataProcessingForm
 					:category="category"
 					@created="dataProcessingCreated()"
-			/></v-expansion-panel-text>
+				/>
+			</v-expansion-panel-text>
 		</v-expansion-panel>
 		<v-expansion-panel
 			v-for="(processData, processingKey) of settings.dataProcessings[category]"
@@ -71,7 +71,9 @@ const dataProcessingUpdated = () => {
 				:color="errorStates[processingKey] ? 'error' : 'neutral-light'"
 			>
 				{{ presenter.processTitle(processData, category) }}
-				<v-icon v-if="errorStates[processingKey]" class="ml-2">mdi-alert</v-icon>
+				<v-icon v-if="errorStates[processingKey]" class="ml-2">
+					mdi-alert
+				</v-icon>
 			</v-expansion-panel-title>
 
 			<v-expansion-panel-text>

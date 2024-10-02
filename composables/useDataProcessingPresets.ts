@@ -4,14 +4,14 @@ export const useDataProcessingPresets = () => {
 
 	const webhosting: DataProcessing[] = [
 		{
-			processor: defaultProcessors.find((processor) => processor.id === 'cloudflare_inc_us'),
+			processor: defaultProcessors.find(processor => processor.id === 'cloudflare_inc_us'),
 			required: true,
 			service: 'Cloudflare CDN',
 			dataCategories: ['online', 'usage'],
 			purposes: ['cdn'],
 		},
 		{
-			processor: defaultProcessors.find((processor) => processor.id === 'storyblok_gmbh_at'),
+			processor: defaultProcessors.find(processor => processor.id === 'storyblok_gmbh_at'),
 			required: true,
 			service: 'Storyblok CMS',
 			dataCategories: ['online', 'usage'],
@@ -22,7 +22,7 @@ export const useDataProcessingPresets = () => {
 	const analytics: DataProcessing[] = [
 		{
 			processor: defaultProcessors.find(
-				(processor) => processor.id === 'google_ireland_limited_ie'
+				processor => processor.id === 'google_ireland_limited_ie'
 			),
 			required: false,
 			service: 'Google Analytics',
@@ -55,7 +55,7 @@ export const useDataProcessingPresets = () => {
 			],
 		},
 		{
-			processor: defaultProcessors.find((processor) => processor.id === 'innocraft_ltd_nz'),
+			processor: defaultProcessors.find(processor => processor.id === 'innocraft_ltd_nz'),
 			required: false,
 			service: 'Matomo Cloud',
 			dataCategories: ['online', 'usage', 'geo', 'pseudonymized'],
@@ -120,7 +120,7 @@ export const useDataProcessingPresets = () => {
 		},
 		{
 			processor: defaultProcessors.find(
-				(processor) => processor.id === 'meta_platforms_inc_us'
+				processor => processor.id === 'meta_platforms_inc_us'
 			),
 			required: false,
 			service: 'Meta-Pixel',
@@ -144,7 +144,7 @@ export const useDataProcessingPresets = () => {
 		},
 		{
 			processor: defaultProcessors.find(
-				(processor) => processor.id === 'tiktok_technology_limited_ie'
+				processor => processor.id === 'tiktok_technology_limited_ie'
 			),
 			required: false,
 			service: 'TikTok Pixel',
@@ -171,14 +171,14 @@ export const useDataProcessingPresets = () => {
 	const tagmanager: DataProcessing[] = [
 		{
 			processor: defaultProcessors.find(
-				(processor) => processor.id === 'google_ireland_limited_ie'
+				processor => processor.id === 'google_ireland_limited_ie'
 			),
 			required: false,
 			service: 'Google Tag Manager',
 			dataCategories: ['online', 'usage'],
 		},
 		{
-			processor: defaultProcessors.find((processor) => processor.id === 'innocraft_ltd_nz'),
+			processor: defaultProcessors.find(processor => processor.id === 'innocraft_ltd_nz'),
 			required: false,
 			service: 'Matomo Cloud Tag Manager',
 			dataCategories: ['online', 'usage'],
@@ -187,7 +187,7 @@ export const useDataProcessingPresets = () => {
 
 	const maps: DataProcessing[] = [
 		{
-			processor: defaultProcessors.find((processor) => processor.id === 'google_llc_us'),
+			processor: defaultProcessors.find(processor => processor.id === 'google_llc_us'),
 			required: false,
 			service: 'Google Maps',
 			dataCategories: ['online', 'geo'],
@@ -237,7 +237,7 @@ export const useDataProcessingPresets = () => {
 	]
 	const videos: DataProcessing[] = [
 		{
-			processor: defaultProcessors.find((processor) => processor.id === 'google_llc_us'),
+			processor: defaultProcessors.find(processor => processor.id === 'google_llc_us'),
 			required: false,
 			service: 'YouTube',
 			dataCategories: ['online', 'geo'],
@@ -305,7 +305,7 @@ export const useDataProcessingPresets = () => {
 			],
 		},
 		{
-			processor: defaultProcessors.find((processor) => processor.id === 'vimeo_com_inc_us'),
+			processor: defaultProcessors.find(processor => processor.id === 'vimeo_com_inc_us'),
 			required: false,
 			service: 'Vimeo',
 			dataCategories: ['online', 'geo'],
@@ -344,7 +344,7 @@ export const useDataProcessingPresets = () => {
 			],
 		},
 		{
-			processor: defaultProcessors.find((processor) => processor.id === 'wistia_inc_us'),
+			processor: defaultProcessors.find(processor => processor.id === 'wistia_inc_us'),
 			required: false,
 			service: 'Wistia Videos',
 			dataCategories: ['online'],
@@ -353,28 +353,28 @@ export const useDataProcessingPresets = () => {
 	const emails: DataProcessing[] = [
 		{
 			processor: defaultProcessors.find(
-				(processor) => processor.id === 'amazon_web_services_inc_us'
+				processor => processor.id === 'amazon_web_services_inc_us'
 			),
 			required: false,
 			service: 'Simple Email Service (SES)',
 			dataCategories: ['personal'],
 		},
 		{
-			processor: defaultProcessors.find((processor) => processor.id === 'brevo_sas_fr'),
+			processor: defaultProcessors.find(processor => processor.id === 'brevo_sas_fr'),
 			required: false,
 			service: 'Transactional Email',
 			dataCategories: ['personal'],
 			purposes: ['transactional_mails'],
 		},
 		{
-			processor: defaultProcessors.find((processor) => processor.id === 'brevo_sas_fr'),
+			processor: defaultProcessors.find(processor => processor.id === 'brevo_sas_fr'),
 			required: false,
 			service: 'Marketing Platform',
 			dataCategories: ['personal'],
 			purposes: ['newsletter'],
 		},
 		{
-			processor: defaultProcessors.find((processor) => processor.id === 'getresponse_sa_pl'),
+			processor: defaultProcessors.find(processor => processor.id === 'getresponse_sa_pl'),
 			required: false,
 			service: 'Email Marketing',
 			dataCategories: ['personal'],

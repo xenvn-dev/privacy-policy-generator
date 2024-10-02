@@ -1,6 +1,6 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const defaultTheme = require('tailwindcss/defaultTheme')
-const colors = require('tailwindcss/colors')
+import type { Config } from 'tailwindcss'
+import colors from 'tailwindcss/colors'
+import defaultTheme from 'tailwindcss/defaultTheme'
 
 const primaryColor = colors.fuchsia
 const secondaryColor = colors.pink
@@ -13,7 +13,7 @@ function rem2px(input, fontSize = 16) {
 	switch (typeof input) {
 		case 'object': {
 			if (Array.isArray(input)) {
-				return input.map((val) => rem2px(val, fontSize))
+				return input.map(val => rem2px(val, fontSize))
 			}
 			const ret = {}
 			for (const key in input) {
@@ -22,14 +22,14 @@ function rem2px(input, fontSize = 16) {
 			return ret
 		}
 		case 'string': {
-			return input.replace(/(\d*\.?\d+)rem$/, (_, val) => `${parseFloat(val) * fontSize}px`)
+			return input.replace(/(\d+(?:\.\d+)?|\.\d+)rem$/, (_, val) => `${Number.parseFloat(val) * fontSize}px`)
 		}
 		case 'function': {
 			// eslint-disable-next-line no-eval
 			return eval(
 				input
 					.toString()
-					.replace(/(\d*\.?\d+)rem/g, (_, val) => `${parseFloat(val) * fontSize}px`)
+					.replace(/(\d+(?:\.\d+)?|\.\d+)rem/g, (_, val) => `${Number.parseFloat(val) * fontSize}px`)
 			)
 		}
 		default:
@@ -37,14 +37,19 @@ function rem2px(input, fontSize = 16) {
 	}
 }
 
-module.exports = {
+export default {
 	content: [
-		'./components/**/*.{vue,js}',
+		'./components/**/*.{vue,js,ts}',
+		'./storyblok/**/*.{vue,js,ts}',
 		'./layouts/**/*.vue',
 		'./pages/**/*.vue',
-		'./app.vue',
+		'./composables/**/*.{js,ts}',
 		'./plugins/**/*.{js,ts}',
-		'./nuxt.config.{js,ts}',
+		'./utils/**/*.{js,ts}',
+		'./app.{js,ts,vue}',
+		'./error.{js,ts,vue}',
+		'./app.config.{js,ts}',
+		'./nuxt.config.{js,ts}'
 	],
 	darkMode: 'class',
 	important: true,
@@ -117,4 +122,4 @@ module.exports = {
 		extend: {},
 	},
 	safelist: [],
-}
+} satisfies Config

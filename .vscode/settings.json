@@ -1,29 +1,78 @@
 {
+	// Editor
+	"editor.inlineSuggest.enabled": true,
+	"editor.insertSpaces": true,
+	"editor.detectIndentation": true,
+	"editor.tabSize": 3,
+	"editor.codeActionsOnSave": {
+		"source.fixAll": "never",
+		"source.organizeImports": "never"
+	},
+	"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+
+	// Turn off included validators
+	"css.validate": false,
+	"less.validate": false,
+	"scss.validate": false,
+
+	// ESLint config: https://github.com/antfu/eslint-config
+	"eslint.codeAction.showDocumentation": {
+		"enable": true
+	},
+	"eslint.validate": [
+		"javascript",
+		"typescript",
+		"javascriptreact",
+		"typescriptreact",
+		"vue",
+		"html",
+		"markdown",
+		"json",
+		"jsonc",
+		"json5",
+		"css"
+	],
+
 	"i18n-ally.localesPaths": ["locales"],
 	"i18n-ally.keystyle": "nested",
 	"i18n-ally.keepFulfilled": false,
 	"i18n-ally.sortKeys": true,
 	"i18n-ally.sourceLanguage": "de",
-	"editor.tabSize": 3,
-	"editor.insertSpaces": true,
-	"editor.detectIndentation": true,
-	"stylelint.enable": true,
-	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	"tailwindCSS.emmetCompletions": true,
-	"css.validate": false,
-	"less.validate": false,
-	"scss.validate": false,
-	"eslint.enable": true,
-	"volar.completion.preferredTagNameCase": "pascal",
-	"editor.quickSuggestions": {
-		"strings": true
+	"eslint.experimental.useFlatConfig": true,
+	"eslint.format.enable": true,
+
+	// Enforce Eslint formatter for all relevant files
+	"[vue]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
 	},
-	"emmet.includeLanguages": {
-		"postcss": "css"
+	"[js]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+	},
+	"[ts]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+	},
+	"[css]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+	},
+
+	// Filetypes to use prettier instead of Eslint
+	"[github-actions-workflow]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[yaml]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[markdown]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[xml]": {
 		"editor.defaultFormatter": "redhat.vscode-xml"
 	},
-	"typescript.tsdk": "node_modules/typescript/lib",
 	"cSpell.words": ["processings", "pseudonymized", "webhosting"]
 }

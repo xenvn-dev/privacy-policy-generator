@@ -29,7 +29,6 @@ const { value, handleChange, errors } = useField(toRef(props, 'name'), undefined
 		:model-value="value"
 		:error-messages="errors"
 		hide-details="auto"
-		@update:modelValue="handleChange"
-	>
-	</v-switch>
+		@update:model-value="handleChange"
+	/>
 </template>

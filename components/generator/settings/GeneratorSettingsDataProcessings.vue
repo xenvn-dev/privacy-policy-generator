@@ -1,4 +1,7 @@
 <script setup lang="ts">
+const emit = defineEmits<{
+	(e: 'hasErrors', state: boolean): void
+}>()
 const breakpoint = useBreakpoint()
 const settings = useSettings()
 
@@ -46,16 +49,12 @@ const categories: Record<DataProcessingCategory, CategoryData> = reactive({
 	},
 })
 
-const emit = defineEmits<{
-	(e: 'hasErrors', state: boolean): void
-}>()
-
 const setErrorState = (category: DataProcessingCategory, hasErrors: boolean) => {
 	categories[category].hasErrors = hasErrors
 }
 
 const hasErrors = computed(() => {
-	return Object.values(categories).some((category) => category.hasErrors)
+	return Object.values(categories).some(category => category.hasErrors)
 })
 
 watch(hasErrors, (hasErrors) => {
@@ -64,6 +63,7 @@ watch(hasErrors, (hasErrors) => {
 
 const activeTab = ref(null)
 </script>
+
 <template>
 	<v-card>
 		<v-tabs
@@ -82,9 +82,11 @@ const activeTab = ref(null)
 				<v-icon>
 					{{ categoryData.icon }}
 				</v-icon>
-				<v-tooltip v-if="breakpoint.min.md" activator="parent" location="top">{{
-					$t(`settings.data_processings.categories.${category}.title`)
-				}}</v-tooltip>
+				<v-tooltip v-if="breakpoint.min.md" activator="parent" location="top">
+					{{
+						$t(`settings.data_processings.categories.${category}.title`)
+					}}
+				</v-tooltip>
 				<span v-if="breakpoint.max.sm" class="ml-3">
 					{{ $t(`settings.data_processings.categories.${category}.title`) }}
 				</span>
@@ -94,7 +96,7 @@ const activeTab = ref(null)
 					:icon="categoryData.hasErrors ? 'mdi-alert' : undefined"
 					:color="categoryData.hasErrors ? 'warning' : undefined"
 					floating
-				></v-badge>
+				/>
 			</v-tab>
 		</v-tabs>
 

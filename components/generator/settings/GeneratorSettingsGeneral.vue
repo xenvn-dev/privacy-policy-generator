@@ -11,6 +11,7 @@ const languageOptions = computed(() => [
 
 const langIsAiGenerated = computed(() => ['it', 'fr'].includes(settings.value.general.language))
 </script>
+
 <template>
 	<form>
 		<FormSelectField
@@ -28,8 +29,7 @@ const langIsAiGenerated = computed(() => ['it', 'fr'].includes(settings.value.ge
 				<a
 					href="https://github.com/webflorist/privacy-policy-generator/issues"
 					target="_blank"
-					>issue</a
-				>
+				>issue</a>
 			</template>
 		</i18n-t>
 	</form>

@@ -7,7 +7,3 @@ node_modules
 .env
 .vite
 dist
-
-# cypress testing folders
-cypress/screenshots
-cypress/videos

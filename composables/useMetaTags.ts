@@ -14,9 +14,9 @@ export const useMetaTags = () => {
 		noRobots?: boolean
 	}
 
-	const routeMeta = computed<RouteMetaOptions>(() => route.meta)
-
 	const route = useRoute()
+
+	const routeMeta = computed<RouteMetaOptions>(() => route.meta)
 	const { siteSettings } = useSiteSettings()
 	const { locale: currentLocale, locales: availableLocales, t, te } = useI18n()
 	const switchLocalePath = useSwitchLocalePath()
@@ -41,17 +41,18 @@ export const useMetaTags = () => {
 		let title = null
 		if (typeof routeMeta.value.title !== 'undefined') {
 			title = routeMeta.value.title
-		} else if (
-			typeof routeMeta.value.pageTranslationPath !== 'undefined' &&
-			te('meta.pages.' + routeMeta.value.pageTranslationPath + '.title')
+		}
+		else if (
+			typeof routeMeta.value.pageTranslationPath !== 'undefined'
+			&& te(`meta.pages.${routeMeta.value.pageTranslationPath}.title`)
 		) {
-			title = t('meta.pages.' + routeMeta.value.pageTranslationPath + '.fullTitle')
+			title = t(`meta.pages.${routeMeta.value.pageTranslationPath}.fullTitle`)
 		}
 		if (title !== null) {
 			if (routeMeta.value.overrideTitleSchema === true) {
 				return title
 			}
-			return title + ' - ' + siteTitle.value
+			return `${title} - ${siteTitle.value}`
 		}
 		return siteTitle.value
 	})
@@ -71,10 +72,10 @@ export const useMetaTags = () => {
 			return routeMeta.value.description
 		}
 		if (
-			typeof routeMeta.value.pageTranslationPath !== 'undefined' &&
-			te('meta.pages.' + routeMeta.value.pageTranslationPath + '.description')
+			typeof routeMeta.value.pageTranslationPath !== 'undefined'
+			&& te(`meta.pages.${routeMeta.value.pageTranslationPath}.description`)
 		) {
-			return t('meta.pages.' + routeMeta.value.pageTranslationPath + '.description')
+			return t(`meta.pages.${routeMeta.value.pageTranslationPath}.description`)
 		}
 		return siteDescription.value
 	})
@@ -97,12 +98,12 @@ export const useMetaTags = () => {
 				const breadcrumbItem = routeMeta.value.breadcrumbs[i]
 				breadcrumbs.push({
 					'@type': 'ListItem',
-					position: i + 1,
-					item: {
+					'position': i + 1,
+					'item': {
 						'@type': 'WebPage',
 						'@id': siteSettings.value.baseUrl + breadcrumbItem.path,
-						url: siteSettings.value.baseUrl + breadcrumbItem.path,
-						name: breadcrumbItem.title,
+						'url': siteSettings.value.baseUrl + breadcrumbItem.path,
+						'name': breadcrumbItem.title,
 					},
 				})
 			}
@@ -239,9 +240,9 @@ export const useMetaTags = () => {
 					innerHTML: JSON.stringify({
 						'@context': 'https://schema.org',
 						'@type': 'WebSite',
-						'@id': siteSettings.value.baseUrl + '/#website',
-						url: siteSettings.value.baseUrl,
-						name: siteTitle.value,
+						'@id': `${siteSettings.value.baseUrl}/#website`,
+						'url': siteSettings.value.baseUrl,
+						'name': siteTitle.value,
 					}),
 				},
 
@@ -251,17 +252,17 @@ export const useMetaTags = () => {
 					innerHTML: JSON.stringify({
 						'@context': 'https://schema.org',
 						'@type': 'WebPage',
-						url: pageUrl.value,
-						inLanguage: 'de-DE',
-						name: pageTitle.value,
-						description: pageDescription.value,
+						'url': pageUrl.value,
+						'inLanguage': 'de-DE',
+						'name': pageTitle.value,
+						'description': pageDescription.value,
 						...(breadcrumbs.value.length > 0
 							? {
 									breadcrumb: {
 										'@type': 'BreadcrumbList',
-										itemListElement: breadcrumbs.value,
+										'itemListElement': breadcrumbs.value,
 									},
-							  }
+								}
 							: {}),
 					}),
 				},
@@ -275,8 +276,8 @@ export const useMetaTags = () => {
 				innerHTML: JSON.stringify({
 					'@context': 'https://schema.org',
 					'@type': 'ImageObject',
-					'@id': pageUrl.value + '/#primaryimage',
-					url: pageImage.value,
+					'@id': `${pageUrl.value}/#primaryimage`,
+					'url': pageImage.value,
 				}),
 			})
 		}

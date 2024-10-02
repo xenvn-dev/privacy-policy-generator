@@ -3,6 +3,7 @@ useMetaTags()
 useFavicons()
 useColorTheme()
 </script>
+
 <template>
 	<v-app>
 		<PageHeader />

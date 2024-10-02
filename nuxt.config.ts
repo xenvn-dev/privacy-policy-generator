@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
 import { theme } from './tailwind.config.js'
+
 export default defineNuxtConfig({
 	runtimeConfig: {
 		public: {},
@@ -8,9 +9,10 @@ export default defineNuxtConfig({
 	modules: [
 		'@nuxtjs/i18n',
 		'@nuxtjs/tailwindcss',
-		'nuxt-simple-sitemap',
+		'@nuxtjs/sitemap',
 		'@vueuse/nuxt',
 		'@invictus.codes/nuxt-vuetify',
+		'@nuxt/eslint'
 	],
 	css: [
 		'@fontsource/roboto/300.css',
@@ -25,6 +27,17 @@ export default defineNuxtConfig({
 			devSourcemap: true,
 		},
 	},
+
+	// eslint module config (see https://eslint.nuxt.com/packages/module)
+	eslint: {
+		config: {
+			stylistic: {
+				indent: 'tab',
+			},
+		}
+	},
+
+	// I18n module config (see https://github.com/nuxt-modules/i18n)
 	i18n: {
 		locales: [
 			{
@@ -77,12 +90,12 @@ export default defineNuxtConfig({
 					light: {
 						dark: false,
 						colors: {
-							surface: theme.colors.primary[100],
-							background: '#ffffff',
-							primary: theme.colors.primary.DEFAULT,
+							'surface': theme.colors.primary[100],
+							'background': '#ffffff',
+							'primary': theme.colors.primary.DEFAULT,
 							'primary-light': theme.colors.primary.light,
 							'primary-dark': theme.colors.primary.dark,
-							secondary: theme.colors.neutral.DEFAULT,
+							'secondary': theme.colors.neutral.DEFAULT,
 							'secondary-light': theme.colors.neutral.light,
 							'secondary-dark': theme.colors.neutral.dark,
 						},
@@ -90,11 +103,11 @@ export default defineNuxtConfig({
 					dark: {
 						dark: true,
 						colors: {
-							surface: '#1a2128',
-							background: '#191919',
+							'surface': '#1a2128',
+							'background': '#191919',
 							'on-surface-variant': '#1a2128',
-							primary: theme.colors.primary.DEFAULT,
-							secondary: '#4d4d4d',
+							'primary': theme.colors.primary.DEFAULT,
+							'secondary': '#4d4d4d',
 							'secondary-light': '#777777',
 							'secondary-dark': theme.colors.neutral.dark,
 						},
@@ -135,6 +148,7 @@ export default defineNuxtConfig({
 				},
 				VChipGroup: {
 					selectedClass: 'bg-primary',
+					column: true,
 				},
 			},
 		},
@@ -155,12 +169,12 @@ export default defineNuxtConfig({
 		plugins: {
 			'postcss-import': {},
 			'tailwindcss/nesting': {},
-			tailwindcss: {},
-			autoprefixer: {},
-			'postcss-extend': {},
+			'tailwindcss': {},
+			'autoprefixer': {},
 		},
 	},
 
+	// Global page headers (https://nuxt.com/docs/api/configuration/nuxt-config/#head)
 	app: {
 		head: {
 			meta: [
@@ -181,11 +195,16 @@ export default defineNuxtConfig({
 		},
 	},
 
-	// Sitemap module config (see https://github.com/harlan-zw/nuxt-simple-sitemap)
+	// Sitemap module config (see https://nuxtseo.com/sitemap)
+	site: {
+		url: 'https://privacy-policy-generator.web.florist',
+	},
+
 	sitemap: {
-		siteUrl: 'https://privacy-policy-generator.web.florist',
 		discoverImages: false,
-		sitemaps: false,
+		discoverVideos: false,
+		autoI18n: false,
+
 	},
 
 	// Nitro Config (See https://nitro.unjs.io/config)
@@ -195,4 +214,6 @@ export default defineNuxtConfig({
 			crawlLinks: true,
 		},
 	},
+
+	compatibilityDate: '2024-07-10',
 })

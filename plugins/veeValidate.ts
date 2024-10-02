@@ -1,9 +1,9 @@
-import { defineRule, configure } from 'vee-validate'
 import { localize, setLocale } from '@vee-validate/i18n'
-// eslint-disable-next-line camelcase
-import { required, email, url, numeric, one_of } from '@vee-validate/rules'
-import en from '@vee-validate/i18n/dist/locale/en.json'
 import de from '@vee-validate/i18n/dist/locale/de.json'
+
+import en from '@vee-validate/i18n/dist/locale/en.json'
+import { email, numeric, one_of, required, url } from '@vee-validate/rules'
+import { configure, defineRule } from 'vee-validate'
 
 export default defineNuxtPlugin((nuxtApp) => {
 	configure({
@@ -13,7 +13,7 @@ export default defineNuxtPlugin((nuxtApp) => {
 		}),
 	})
 
-	watch(nuxtApp.$i18n.locale, (newLocale) => setLocale(newLocale), {
+	watch(nuxtApp.$i18n.locale, newLocale => setLocale(newLocale), {
 		immediate: true,
 	})
 

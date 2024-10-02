@@ -38,7 +38,7 @@ const { value, handleChange, errors } = useField(toRef(props, 'name'), undefined
 		:model-value="value"
 		:error-messages="errors"
 		hide-details="auto"
-		@update:modelValue="handleChange"
+		@update:model-value="handleChange"
 	>
 		<v-radio v-for="(item, key) in items" :key="key" :value="item.value">
 			<template #label>

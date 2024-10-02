@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useTheme } from 'vuetify'
+
 const { locale: currentLocale, locales: availableLocales, localeProperties } = useI18n()
 const theme = useTheme()
 const router = useRouter()
@@ -17,12 +18,12 @@ const themeIcon = computed(() =>
 		<template #prepend>
 			<v-app-bar-nav-icon>
 				<NuxtLink
-					:to="'/' + currentLocale"
+					:to="`/${currentLocale}`"
 					class="unstyled"
 					:title="$t('general.back_to_home')"
 				>
 					<span class="sr-only">{{ $t('general.back_to_home') }}</span>
-					<img :alt="$t('images.favicon.alt')" src="/favicon.svg" class="w-32" />
+					<img :alt="$t('images.favicon.alt')" src="/favicon.svg" class="w-32">
 				</NuxtLink>
 			</v-app-bar-nav-icon>
 		</template>
@@ -34,18 +35,18 @@ const themeIcon = computed(() =>
 				target="_blank"
 				class="on-background"
 				:title="$t('general.goto_github')"
-			></v-btn>
+			/>
 			<v-btn
 				:icon="themeIcon"
 				class="on-background"
 				:title="$t('general.switch_theme')"
 				@click="toggleTheme"
-			></v-btn>
-			<v-divider vertical class="mx-3"></v-divider>
+			/>
+			<v-divider vertical class="mx-3" />
 			<v-menu>
 				<template #activator="{ props }">
 					<v-btn color="primary" variant="elevated" v-bind="props">
-						<v-icon icon="mdi-web" class="mr-2"></v-icon>
+						<v-icon icon="mdi-web" class="mr-2" />
 						{{ localeProperties.name }}
 					</v-btn>
 				</template>

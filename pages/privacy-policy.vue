@@ -12,7 +12,7 @@ const settings: GeneratorSettings = {
 	dataProcessings: {
 		webhosting: [
 			{
-				processor: defaultProcessors.find((processor) => processor.id === 'netlify_inc_us'),
+				processor: defaultProcessors.find(processor => processor.id === 'netlify_inc_us'),
 				required: true,
 				dataCategories: ['online', 'usage'],
 				browserStore: [],

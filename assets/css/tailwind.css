@@ -32,8 +32,4 @@
 	.container-padding {
 		@apply px-4 md:px-10;
 	}
-
-	.text-primary-adaptive {
-		@extend %text-primary-adaptive;
-	}
 }

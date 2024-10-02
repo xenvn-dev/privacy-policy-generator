@@ -1,19 +1,19 @@
 export const useBreakpoint = () => {
 	type Breakpoint = null | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'
 	type BreakpointStatus = {
-		xs: boolean | null
-		sm: boolean | null
-		md: boolean | null
-		lg: boolean | null
-		xl: boolean | null
+		'xs': boolean | null
+		'sm': boolean | null
+		'md': boolean | null
+		'lg': boolean | null
+		'xl': boolean | null
 		'2xl': boolean | null
 	}
 	const breakpoints = {
-		xs: 475,
-		sm: 640,
-		md: 768,
-		lg: 1024,
-		xl: 1280,
+		'xs': 475,
+		'sm': 640,
+		'md': 768,
+		'lg': 1024,
+		'xl': 1280,
 		'2xl': 1536,
 	}
 
@@ -22,20 +22,20 @@ export const useBreakpoint = () => {
 	const current = ref<Breakpoint>(null)
 
 	const min = reactive<BreakpointStatus>({
-		xs: null,
-		sm: null,
-		md: null,
-		lg: null,
-		xl: null,
+		'xs': null,
+		'sm': null,
+		'md': null,
+		'lg': null,
+		'xl': null,
 		'2xl': null,
 	})
 
 	const max = reactive<BreakpointStatus>({
-		xs: null,
-		sm: null,
-		md: null,
-		lg: null,
-		xl: null,
+		'xs': null,
+		'sm': null,
+		'md': null,
+		'lg': null,
+		'xl': null,
 		'2xl': null,
 	})
 

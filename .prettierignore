@@ -1,0 +1,25 @@
+# Ignore everything recursively, since ESlint takes care of almost everything
+*
+
+# But not these files
+!*.json
+!*.yaml
+!*.md
+
+# Check subdirectories too
+!*/
+
+# Always ignore these files
+node_modules
+*.log*
+.nuxt
+.nitro
+.cache
+cache
+.output
+.env
+dist
+.vite
+public
+.npm
+pnpm-lock.yaml

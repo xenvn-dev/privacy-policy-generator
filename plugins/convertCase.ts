@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable prefer-regex-literals */
 /*
 Nuxt 3 Plugin providing helpers to convert anything
 to kebap-case, snake_case, camelCase or PascalCase.
@@ -19,22 +17,22 @@ Usage as helper in template:
 export default defineNuxtPlugin(() => {
 	const toKebabCase = (string: string): string =>
 		string
-			.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
-			.map((x) => x.toLowerCase())
+			.match(/[A-Z]{2,}(?=[A-Z][a-z]+\d|\b)|[A-Z]?[a-z]+\d|[A-Z]|\d+/g)
+			.map(x => x.toLowerCase())
 			.join('-')
 
 	const toSnakeCase = (string: string): string => toKebabCase(string).replace('-', '_')
 
 	const toCamelCase = (string: string): string =>
-		string.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase())
+		string.toLowerCase().replace(/[^a-z0-9]+(.)/gi, (m, chr) => chr.toUpperCase())
 
 	const toPascalCase = (string: string): string =>
 		string
 			.toLowerCase()
-			.replace(new RegExp(/[-_]+/, 'g'), ' ')
-			.replace(new RegExp(/[^\w\s]/, 'g'), '')
-			.replace(new RegExp(/\s+(.)(\w*)/, 'g'), ($1, $2, $3) => `${$2.toUpperCase() + $3}`)
-			.replace(new RegExp(/\w/), (s) => s.toUpperCase())
+			.replace(/[-_]+/g, ' ')
+			.replace(/[^\w\s]/g, '')
+			.replace(/\s+(.)(\w*)/g, ($1, $2, $3) => `${$2.toUpperCase() + $3}`)
+			.replace(/\w/, s => s.toUpperCase())
 
 	return {
 		provide: {

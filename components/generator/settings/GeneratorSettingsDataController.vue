@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { useForm, defineRule } from 'vee-validate'
-const { t } = useI18n()
-const countries = useCountries()
-const settings = useSettings()
+import { defineRule, useForm } from 'vee-validate'
 
 const emit = defineEmits<{
 	(e: 'hasErrors', state: boolean): void
 }>()
+const { t } = useI18n()
+const countries = useCountries()
+const settings = useSettings()
 
 defineRule('name_or_org_required', (_value, _target, ctx) => {
 	if (ctx.form.name || ctx.form.organization) {
@@ -33,6 +33,7 @@ watch(hasErrors, (newHasErrors) => {
 	emit('hasErrors', newHasErrors)
 })
 </script>
+
 <template>
 	<p>{{ $t('settings.data_controller.description') }}</p>
 	<form>

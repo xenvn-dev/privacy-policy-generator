@@ -9,7 +9,7 @@ const homeLink = computed(() => {
 	if (currentLocale.value === defaultLocale) {
 		return '/'
 	}
-	return '/' + currentLocale.value
+	return `/${currentLocale.value}`
 })
 </script>
 
@@ -17,8 +17,12 @@ const homeLink = computed(() => {
 	<main class="typography">
 		<div class="container-padding container my-16">
 			<div class="m-default-lg text-center text-3xl md:text-4xl xl:text-5xl">
-				<h1 v-if="error.statusCode === 404">404 - {{ $t('errors.page_not_found') }}</h1>
-				<h1 v-else>{{ $t('errors.general_error') }}</h1>
+				<h1 v-if="error.statusCode === 404">
+					404 - {{ $t('errors.page_not_found') }}
+				</h1>
+				<h1 v-else>
+					{{ $t('errors.general_error') }}
+				</h1>
 			</div>
 			<div class="m-default-lg text-center">
 				<p>

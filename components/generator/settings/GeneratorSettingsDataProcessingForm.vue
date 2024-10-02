@@ -1,13 +1,5 @@
 <script setup lang="ts">
 import { useForm } from 'vee-validate'
-const settings = useSettings()
-const defaultProcessors = useDefaultProcessors()
-const usedProcessors = useUsedProcessors()
-const presets = useDataProcessingPresets()
-const dataCategories = useDataCategories()
-const countries = useCountries()
-const { t } = useI18n()
-const { formOptions, processTitle, processorName } = usePresenter()
 
 const props = defineProps({
 	category: {
@@ -20,13 +12,20 @@ const props = defineProps({
 		default: null,
 	},
 })
-
 const emit = defineEmits<{
 	(e: 'hasErrors', state: boolean): void
 	(e: 'created', key: number): void
 	(e: 'sorted', key: number): void
 	(e: 'updated'): void
 }>()
+const settings = useSettings()
+const defaultProcessors = useDefaultProcessors()
+const usedProcessors = useUsedProcessors()
+const presets = useDataProcessingPresets()
+const dataCategories = useDataCategories()
+const countries = useCountries()
+const { t } = useI18n()
+const { formOptions, processTitle, processorName } = usePresenter()
 
 const blankProcessing: DataProcessing = {
 	processor: {
@@ -120,7 +119,7 @@ const processorOptions = computed(() => {
 				value: 'header',
 				props: { disabled: true },
 			},
-			...usedProcessors.value.map((processor) => generateOption(processor))
+			...usedProcessors.value.map(processor => generateOption(processor))
 		)
 	}
 	options.push({
@@ -131,7 +130,7 @@ const processorOptions = computed(() => {
 	options.push(
 		...defaultProcessors.flatMap((processor) => {
 			// Only add default processor, if not already used.
-			if (!options.find((option) => processor.id === option.key)) {
+			if (!options.find(option => processor.id === option.key)) {
 				return generateOption(processor)
 			}
 			return []
@@ -188,7 +187,7 @@ const loadProcessorFromPreset = (key: string) => {
 	// First add processor to processor-list
 	Object.assign(
 		newProcessing.processor,
-		allProcessors.find((processor) => processor.id === key)
+		allProcessors.find(processor => processor.id === key)
 	)
 }
 
@@ -211,10 +210,10 @@ const deleteBrowserStore = (key) => {
 	activeBrowserStoreTab.value = processingModel.value.browserStore[key]
 		? key
 		: processingModel.value.browserStore[key - 1]
-		? key - 1
-		: processingModel.value.browserStore[0]
-		? 0
-		: 9999
+			? key - 1
+			: processingModel.value.browserStore[0]
+				? 0
+				: 9999
 }
 
 const { errors } = useForm({
@@ -249,6 +248,7 @@ watch(hasErrors, (newHasErrors) => {
 	emit('hasErrors', newHasErrors)
 })
 </script>
+
 <template>
 	<template v-if="createNew && presetOptions.length > 0">
 		<h5>{{ $t('settings.data_processings.load_from_preset') }}</h5>
@@ -258,26 +258,27 @@ watch(hasErrors, (newHasErrors) => {
 			:standalone="true"
 			:clearable="false"
 			name="loadProcessFromPreset"
-			@update:modelValue="loadProcessFromPreset($event)"
-		>
-		</FormSelectField>
+			@update:model-value="loadProcessFromPreset($event)"
+		/>
 	</template>
 	<div v-if="!createNew" class="m-default-sm flex flex-row items-center justify-end gap-5">
 		<v-btn
 			v-if="settings.dataProcessings[category].length > 0 && processingKey !== 0"
 			append-icon="mdi-chevron-up"
 			@click="sortUp()"
-			>{{ $t('general.sort_up') }}</v-btn
 		>
+			{{ $t('general.sort_up') }}
+		</v-btn>
 		<v-btn
 			v-if="
-				settings.dataProcessings[category].length > 0 &&
-				settings.dataProcessings[category].length > processingKey + 1
+				settings.dataProcessings[category].length > 0
+					&& settings.dataProcessings[category].length > processingKey + 1
 			"
 			append-icon="mdi-chevron-down"
 			@click="sortDown()"
-			>{{ $t('general.sort_down') }}</v-btn
 		>
+			{{ $t('general.sort_down') }}
+		</v-btn>
 		<v-btn
 			color="error"
 			append-icon="mdi-alert"
@@ -292,7 +293,7 @@ watch(hasErrors, (newHasErrors) => {
 		class="m-default-sm"
 		:label="$t('settings.data_processings.fields.required.title')"
 		name="required"
-	></FormSwitch>
+	/>
 	<h5>{{ $t('settings.data_processings.fields.processor.title') }}</h5>
 	<div class="m-default-sm">
 		<FormSelectField
@@ -302,9 +303,8 @@ watch(hasErrors, (newHasErrors) => {
 			:standalone="true"
 			:clearable="false"
 			name="loadProcessorFromPreset"
-			@update:modelValue="loadProcessorFromPreset($event)"
-		>
-		</FormSelectField>
+			@update:model-value="loadProcessorFromPreset($event)"
+		/>
 		<FormTextField
 			v-model="processingModel.processor.name"
 			:label="$t('settings.data_processings.fields.processor.name.title')"
@@ -376,7 +376,7 @@ watch(hasErrors, (newHasErrors) => {
 			:label="$t('settings.data_processings.fields.purposes.title')"
 			:items="purposesOptions"
 			multiple
-		></FormChipGroup>
+		/>
 	</template>
 
 	<h5>{{ $t('settings.data_processings.fields.data_categories.title') }}</h5>
@@ -387,7 +387,7 @@ watch(hasErrors, (newHasErrors) => {
 		:label="$t('settings.data_processings.fields.data_categories.title')"
 		:items="dataCategoryOptions"
 		multiple
-	></FormChipGroup>
+	/>
 
 	<h5>{{ $t('settings.data_processings.fields.browser_store.title') }}</h5>
 	<v-card>
@@ -397,10 +397,14 @@ watch(hasErrors, (newHasErrors) => {
 				:key="key"
 				:value="key"
 			>
-				<template v-if="browserStoreEntry.name">{{ browserStoreEntry.name }}</template>
-				<template v-else>{{
-					$t('settings.data_processings.fields.browser_store.new_browser_store')
-				}}</template>
+				<template v-if="browserStoreEntry.name">
+					{{ browserStoreEntry.name }}
+				</template>
+				<template v-else>
+					{{
+						$t('settings.data_processings.fields.browser_store.new_browser_store')
+					}}
+				</template>
 			</v-tab>
 			<v-tab :value="9999" prepend-icon="mdi-plus" @click="addBrowserStore()">
 				{{ $t('general.add') }}
@@ -453,5 +457,5 @@ watch(hasErrors, (newHasErrors) => {
 		:messages="$t('errors.errors_in_form')"
 		color="error"
 		class="mt-3 px-6 text-center"
-	></v-messages>
+	/>
 </template>

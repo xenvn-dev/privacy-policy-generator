@@ -3,12 +3,14 @@ const { y } = useWindowScroll()
 
 const getStyle = (ratio: number): string => `transform:translate3d(0,-${y.value * ratio}px,0)`
 </script>
+
 <template>
 	<div class="parallax-bg">
-		<div class="background" :style="getStyle(0.3)"></div>
-		<div class="flower-ornament" :style="getStyle(0.1)"></div>
+		<div class="background" :style="getStyle(0.3)" />
+		<div class="flower-ornament" :style="getStyle(0.1)" />
 	</div>
 </template>
+
 <style scoped>
 .parallax-bg {
 	@apply absolute bottom-0 left-0 right-0 top-0 overflow-hidden;

@@ -29,9 +29,9 @@ const { value, handleChange, errors } = useField(toRef(props, 'name'), undefined
 		:model-value="value"
 		:error-messages="errors"
 		hide-details="auto"
-		@update:modelValue="handleChange"
+		@update:model-value="handleChange"
 	>
-		<v-radio :model-value="value" @update:modelValue="handleChange">
+		<v-radio :model-value="value" @update:model-value="handleChange">
 			<template #label>
 				{{ label }}
 			</template>

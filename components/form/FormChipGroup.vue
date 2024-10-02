@@ -38,9 +38,11 @@ const { value, handleChange, errors } = useField(toRef(props, 'name'), undefined
 		<v-chip-group :model-value="value" v-bind="$attrs" @update:model-value="handleChange">
 			<v-chip v-for="(item, key) in items" :key="key" :value="item.value">
 				{{ item.title }}
-				<v-tooltip v-if="item.hint" activator="parent" location="bottom">{{
-					item.hint
-				}}</v-tooltip>
+				<v-tooltip v-if="item.hint" activator="parent" location="bottom">
+					{{
+						item.hint
+					}}
+				</v-tooltip>
 			</v-chip>
 		</v-chip-group>
 		<v-messages
@@ -49,6 +51,6 @@ const { value, handleChange, errors } = useField(toRef(props, 'name'), undefined
 			:messages="errors"
 			color="error"
 			class="mt-3 px-3"
-		></v-messages>
+		/>
 	</div>
 </template>

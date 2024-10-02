@@ -150,8 +150,7 @@
 			----------------
 			*/
 		a:not(.unstyled, [class*='btn-']) {
-			@extend %text-primary-adaptive;
-			@apply border-b border-dotted border-primary font-semibold text-primary no-underline hover:border-solid;
+			@apply text-primary dark:text-primary-500 border-b border-dotted border-primary dark:border-primary-500 font-semibold no-underline hover:border-solid;
 		}
 
 		/*
@@ -178,7 +177,7 @@
 			list-style: none;
 
 			li::before {
-				/* 
+				/*
 				Disc:   '\2022'
 				Square: '\25AA'
 				*/

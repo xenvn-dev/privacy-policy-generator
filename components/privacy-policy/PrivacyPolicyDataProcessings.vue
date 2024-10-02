@@ -15,6 +15,7 @@ const { processTitle } = usePresenter(true)
 const locale = computed(() => settings.value.general.language)
 const t = (keypath: string) => useI18n().t(keypath, 1, { locale: locale.value })
 </script>
+
 <template>
 	<p>{{ t('privacy_policy.data_processing.items.p1') }}</p>
 
@@ -28,16 +29,16 @@ const t = (keypath: string) => useI18n().t(keypath, 1, { locale: locale.value })
 
 			<h5>{{ t('settings.data_processings.fields.processor.title') }}</h5>
 			<p>
-				{{ process.processor.name }}<br />
-				{{ process.processor.street }}<br />
-				{{ process.processor.zip }} {{ process.processor.city }}<br />
-				{{ getCountryName(process.processor.country, locale) }}<br />
+				{{ process.processor.name }}<br>
+				{{ process.processor.street }}<br>
+				{{ process.processor.zip }} {{ process.processor.city }}<br>
+				{{ getCountryName(process.processor.country, locale) }}<br>
 
 				<a :href="process.processor.privacy_policy_url" target="_blank">{{
 					t('settings.data_processings.fields.processor.privacy_policy_url.title')
 				}}</a>
 				<template v-if="process.processor.dpf_url">
-					<br />
+					<br>
 					<a :href="process.processor.dpf_url" target="_blank">{{
 						t('settings.data_processings.fields.processor.dpf_url.title')
 					}}</a>
@@ -50,18 +51,16 @@ const t = (keypath: string) => useI18n().t(keypath, 1, { locale: locale.value })
 				</h5>
 				<ul>
 					<li v-for="purpose of process.purposes" :key="purpose">
-						<strong
-							>{{
-								t(
-									`settings.data_processings.fields.purposes.options.${purpose}.title`
-								)
-							}}:</strong
-						>
+						<strong>{{
+							t(
+								`settings.data_processings.fields.purposes.options.${purpose}.title`,
+							)
+						}}:</strong>
 						{{
 							t(
-								`settings.data_processings.fields.purposes.options.${purpose}.description`
+								`settings.data_processings.fields.purposes.options.${purpose}.description`,
 							)
-						}}<br />
+						}}<br>
 					</li>
 				</ul>
 			</template>
@@ -72,18 +71,16 @@ const t = (keypath: string) => useI18n().t(keypath, 1, { locale: locale.value })
 
 			<ul>
 				<li v-for="dataCategory of process.dataCategories" :key="dataCategory">
-					<strong
-						>{{
-							t(
-								`settings.data_processings.fields.data_categories.options.${dataCategory}.title`
-							)
-						}}:</strong
-					>
+					<strong>{{
+						t(
+							`settings.data_processings.fields.data_categories.options.${dataCategory}.title`,
+						)
+					}}:</strong>
 					{{
 						t(
-							`settings.data_processings.fields.data_categories.options.${dataCategory}.description`
+							`settings.data_processings.fields.data_categories.options.${dataCategory}.description`,
 						)
-					}}<br />
+					}}<br>
 				</li>
 			</ul>
 			<template v-if="process.browserStore && process.browserStore.length > 0">

@@ -1,6 +1,7 @@
 import i18nCountries from 'i18n-iso-countries'
 import de from 'i18n-iso-countries/langs/de.json'
 import en from 'i18n-iso-countries/langs/en.json'
+
 export const useCountries = () => {
 	const { locale: currentLocale } = useI18n()
 

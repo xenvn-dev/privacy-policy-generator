@@ -9,6 +9,7 @@ module.exports = {
 		{
 			files: ['**/*.md', '**/*.yaml', '**/*.yml'],
 			options: {
+				useTabs: false,
 				tabWidth: 2,
 			},
 		},

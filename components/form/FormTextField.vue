@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { defineProps, toRef } from 'vue'
 import { useField } from 'vee-validate'
+import { defineProps, toRef } from 'vue'
 
 const props = defineProps({
 	name: {
@@ -46,7 +46,7 @@ const { value, handleBlur, handleChange, errors } = useField(toRef(props, 'name'
 		:name="name"
 		@blur="handleBlur"
 		@input="handleChange"
-		@update:modelValue="handleChange"
+		@update:model-value="handleChange"
 	>
 		<template v-if="$slots.prepend" #prepend>
 			<slot name="prepend" />
