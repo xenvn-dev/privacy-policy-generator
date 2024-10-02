@@ -325,7 +325,7 @@
 								"title": "Unlimited"
 							}
 						},
-						"title": "Validity Duration"
+						"title": "Validity Duration:"
 					},
 					"name": {
 						"title": "Name"
@@ -349,12 +349,12 @@
 								"title": "Storing user settings (e.g., language, display mode)"
 							}
 						},
-						"title": "Purpose"
+						"title": "Purpose:"
 					},
 					"third_party": {
 						"title": "Created by a third-party domain"
 					},
-					"title": "Browser Storage",
+					"title": "Browser Storage:",
 					"type": {
 						"options": {
 							"cookie": {
@@ -370,7 +370,7 @@
 								"title": "Session Storage"
 							}
 						},
-						"title": "Type"
+						"title": "Type:"
 					},
 					"written_on": {
 						"options": {
@@ -383,7 +383,7 @@
 								"title": "Upon usage of the respective service"
 							}
 						},
-						"title": "Creation Time"
+						"title": "Creation Time:"
 					}
 				},
 				"data_categories": {
@@ -417,7 +417,7 @@
 							"title": "Usage Data"
 						}
 					},
-					"title": "Processed Data Categories"
+					"title": "Processed Data Categories:"
 				},
 				"processor": {
 					"city": {
@@ -441,7 +441,7 @@
 					"street": {
 						"title": "Street"
 					},
-					"title": "Data Processor",
+					"title": "Data Processor:",
 					"zip": {
 						"title": "ZIP Code"
 					}
@@ -505,7 +505,7 @@
 							"title": "Videos"
 						}
 					},
-					"title": "Purposes"
+					"title": "Purposes:"
 				},
 				"required": {
 					"title": "This data processing is technically necessary for providing the basic functionality of the website."

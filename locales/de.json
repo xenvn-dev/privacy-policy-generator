@@ -325,7 +325,7 @@
 								"title": "Unbegrenzt"
 							}
 						},
-						"title": "Gültigkeitsdauer"
+						"title": "Gültigkeitsdauer:"
 					},
 					"name": {
 						"title": "Name"
@@ -349,12 +349,12 @@
 								"title": "Speichern von Benutzer-Einstellungen (z.B. Sprache, Anzeigemodus)"
 							}
 						},
-						"title": "Zweck"
+						"title": "Zweck:"
 					},
 					"third_party": {
 						"title": "Wird durch Domain eines Drittanbieters erstellt"
 					},
-					"title": "Browser-Speicher",
+					"title": "Browser-Speicher:",
 					"type": {
 						"options": {
 							"cookie": {
@@ -370,7 +370,7 @@
 								"title": "Session Storage"
 							}
 						},
-						"title": "Typ"
+						"title": "Typ:"
 					},
 					"written_on": {
 						"options": {
@@ -383,7 +383,7 @@
 								"title": "Bei Verwendung des jeweiligen Dienstes"
 							}
 						},
-						"title": "Erstellungszeitpunkt"
+						"title": "Erstellungszeitpunkt:"
 					}
 				},
 				"data_categories": {
@@ -417,7 +417,7 @@
 							"title": "Nutzungsdaten"
 						}
 					},
-					"title": "Verarbeitete Datenkategorien"
+					"title": "Verarbeitete Datenkategorien:"
 				},
 				"processor": {
 					"city": {
@@ -441,7 +441,7 @@
 					"street": {
 						"title": "Straße"
 					},
-					"title": "Auftragsverarbeiter",
+					"title": "Auftragsverarbeiter:",
 					"zip": {
 						"title": "PLZ"
 					}
@@ -505,7 +505,7 @@
 							"title": "Videos"
 						}
 					},
-					"title": "Zwecke"
+					"title": "Zwecke:"
 				},
 				"required": {
 					"title": "Diese Datenverarbeitung ist technisch notwendig für die Bereitstellung der Basisfunktionalitäten der Webseite."

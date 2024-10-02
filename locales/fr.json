@@ -9,8 +9,8 @@
 	"general": {
 		"add": "Ajouter",
 		"back_to_home": "Retour à la page d'accueil",
-		"cc0_licence": "Licence creative commons CC0 1.0 \"Public Domain\" (domaine public)",
-		"cc0_link": "https://creativecommons.org/publicdomain/zero/1.0/deed.fr",
+		"cc0_licence": "licence creative commons CC0 1.0 \"Public Domain\" (domaine public)",
+		"cc0_link": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
 		"close": "Fermer",
 		"copy_html": "HTML",
 		"copy_markdown": "Markdown",
@@ -54,7 +54,7 @@
 	"privacy_policy": {
 		"browser_store": {
 			"content": {
-				"p1": "Notre site web ou les traitements de données qui y sont liés stockent certaines informations directement dans votre navigateur web (par exemple, via des \"cookies\") pour assurer certaines fonctionnalités.",
+				"p1": "Notre site web ou les traitements de données associés stockent certaines informations directement dans votre navigateur web (par exemple, via des \"cookies\") afin de garantir certaines fonctionnalités.",
 				"p2": "Ces informations peuvent être définies à la fois directement par notre site web (\"entrées de première partie\") et par les services de traitement des données (par exemple, lors de l'envoi de courriers électroniques ou pour l'analyse du web). Seules les entrées de première partie techniquement nécessaires sont utilisées lors de votre première visite sur notre site web.",
 				"p3": "La plupart des navigateurs web proposent des fonctions permettant de visualiser et de supprimer les entrées déjà définies. En outre, vous pouvez configurer votre navigateur de manière à ce qu'il n'installe aucun cookie. Notez toutefois que cela peut affecter certaines fonctionnalités de notre site web.",
 				"p4": "Les détails concernant les entrées de navigateur utilisées pour le traitement des données sont fournis ci-dessous pour chaque traitement de données."
@@ -128,7 +128,7 @@
 					"p1": "Notre site web offre une fonctionnalité permettant d'envoyer des courriers électroniques à vous ou à nous. Toutes les données fournies dans le courrier électronique (telles que votre nom, votre adresse électronique, etc.) sont transmises aux responsables respectifs du traitement des données et livrées à la boîte aux lettres électronique cible par l'intermédiaire de leurs serveurs de messagerie.",
 					"p2": "Nous n'envoyons des courriers électroniques qu'avec votre consentement explicite ou lorsqu'il existe une nécessité contractuelle ou précontractuelle. Le traitement des données est donc conforme à l'article 6 du RGPD."
 				},
-				"title": "Envoi de courriels"
+				"title": "Envoi d'e-mails"
 			},
 			"title": "Collecte et utilisation des données",
 			"videos": {
@@ -191,7 +191,7 @@
 		},
 		"intro_content": {
 			"p1": "La protection de vos données personnelles nous tient particulièrement à cœur. Sur cette page, nous vous informons sur la collecte, le traitement et le partage des informations personnelles dans le cadre des différentes fonctions de ce site web. Vous trouverez également des informations sur vos droits et la manière dont ils sont protégés.",
-			"p2": "Ce site web traite vos données uniquement sur la base de dispositions légales, telles que le règlement général européen sur la protection des données (\"RGPD\"). Toutes les informations personnelles collectées sont utilisées pour la fourniture et l'amélioration de nos services. Nous n'utiliserons ni ne partagerons jamais vos données personnelles à d'autres fins que celles décrites dans la présente déclaration. En utilisant nos services, vous consentez au traitement des données conformément à la présente politique de confidentialité. Seul le traitement des données techniquement nécessaires est effectué sans votre consentement préalable. Pour tous les autres traitements de données, nous demandons votre consentement en utilisant la fonction correspondante ou par le biais de l'avis de confidentialité. Vous pouvez retirer votre consentement à tout moment."
+			"p2": "Ce site web traite vos données uniquement sur la base de dispositions légales, telles que le Règlement général européen sur la protection des données (\"RGPD\"). Toutes les informations personnelles collectées sont utilisées pour la fourniture et l'amélioration de nos services. Nous n'utiliserons ni ne partagerons jamais vos données personnelles à d'autres fins que celles décrites dans la présente déclaration. En utilisant nos services, vous consentez au traitement des données conformément à la présente politique de confidentialité. Seul le traitement des données techniquement nécessaires est effectué sans votre consentement préalable. Pour tous les autres traitements de données, nous demandons votre consentement en utilisant la fonction correspondante ou par le biais de l'avis de confidentialité. Vous pouvez retirer votre consentement à tout moment."
 		},
 		"outgoing_links": {
 			"content": {
@@ -325,7 +325,7 @@
 								"title": "Illimité"
 							}
 						},
-						"title": "Validité Durée"
+						"title": "Durée de validité :"
 					},
 					"name": {
 						"title": "Nom"
@@ -349,12 +349,12 @@
 								"title": "Mémorisation des réglages de l'utilisateur (langue, mode d'affichage, etc.)"
 							}
 						},
-						"title": "Objectif"
+						"title": "Objectif :"
 					},
 					"third_party": {
 						"title": "Créé par un domaine tiers"
 					},
-					"title": "Stockage du navigateur",
+					"title": "Stockage du navigateur :",
 					"type": {
 						"options": {
 							"cookie": {
@@ -370,7 +370,7 @@
 								"title": "Stockage de la session"
 							}
 						},
-						"title": "Type"
+						"title": "Type :"
 					},
 					"written_on": {
 						"options": {
@@ -383,7 +383,7 @@
 								"title": "Lors de l'utilisation du service concerné"
 							}
 						},
-						"title": "Le temps de la création"
+						"title": "Temps de création :"
 					}
 				},
 				"data_categories": {
@@ -417,7 +417,7 @@
 							"title": "Données d'utilisation"
 						}
 					},
-					"title": "Catégories de données traitées"
+					"title": "Catégories de données traitées :"
 				},
 				"processor": {
 					"city": {
@@ -441,7 +441,7 @@
 					"street": {
 						"title": "Rue"
 					},
-					"title": "Responsable du traitement des données",
+					"title": "Responsable du traitement des données :",
 					"zip": {
 						"title": "Code postal"
 					}
@@ -505,7 +505,7 @@
 							"title": "Vidéos"
 						}
 					},
-					"title": "Objectifs"
+					"title": "Objectifs :"
 				},
 				"required": {
 					"title": "Ce traitement de données est techniquement nécessaire pour assurer la fonctionnalité de base du site web."
