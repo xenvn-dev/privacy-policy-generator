@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineRule, useForm } from 'vee-validate'
+import { defineRule } from 'vee-validate'
 
 const emit = defineEmits<{
 	(e: 'hasErrors', state: boolean): void

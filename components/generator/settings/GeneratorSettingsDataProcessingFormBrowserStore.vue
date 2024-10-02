@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useForm } from 'vee-validate'
-
 const props = defineProps({
 	modelValue: {
 		type: Object,

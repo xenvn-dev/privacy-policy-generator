@@ -12,6 +12,7 @@ export default defineNuxtConfig({
 		'@nuxtjs/sitemap',
 		'@vueuse/nuxt',
 		'@nuxt/eslint',
+		'@vee-validate/nuxt',
 		'vuetify-nuxt-module'
 	],
 	css: [
@@ -192,6 +193,18 @@ export default defineNuxtConfig({
 					crossorigin: 'anonymous',
 				},
 			], */
+		},
+	},
+
+	// VeeValidate config (see https://vee-validate.logaretm.com/v4/integrations/nuxt)
+	veeValidate: {
+		autoImports: true,
+		// Use different names for components
+		componentNames: {
+			Form: 'VeeForm',
+			Field: 'VeeField',
+			FieldArray: 'VeeFieldArray',
+			ErrorMessage: 'VeeErrorMessage',
 		},
 	},
 

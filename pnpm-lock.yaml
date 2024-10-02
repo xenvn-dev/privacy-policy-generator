@@ -38,6 +38,9 @@ importers:
       '@vee-validate/i18n':
         specifier: ^4.13.2
         version: 4.13.2
+      '@vee-validate/nuxt':
+        specifier: ^4.13.2
+        version: 4.13.2(magicast@0.3.5)(rollup@4.24.0)(vue@3.5.10(typescript@5.6.2))
       '@vee-validate/rules':
         specifier: ^4.13.2
         version: 4.13.2(vue@3.5.10(typescript@5.6.2))
@@ -1442,6 +1445,9 @@ packages:
 
   '@vee-validate/i18n@4.13.2':
     resolution: {integrity: sha512-GWqGgxJsQwZZCcrQOsvLNcvxLk1DmHctGw8vYXvwgqoj2hyrLtGQSmeIAqUVa2cYR6rk7301Ity5iJgOou9K5A==}
+
+  '@vee-validate/nuxt@4.13.2':
+    resolution: {integrity: sha512-rpYYO2isCrgHRdJnKRXGPn8aqhyZvCPUJgNubftPum1txbngkO/LNiFsZdFDO7auGprDAQf7axpszRfeKoCGVg==}
 
   '@vee-validate/rules@4.13.2':
     resolution: {integrity: sha512-NrmjxXw/gZQVhjgwIdEOeRYxn74I/3BYXTuExdwbpCPVgFh0pjTQx9aPGkVBnueeszVqO2LfWyKUpvwSWLPXRA==}
@@ -6441,6 +6447,18 @@ snapshots:
       vue: 3.5.10(typescript@5.6.2)
 
   '@vee-validate/i18n@4.13.2': {}
+
+  '@vee-validate/nuxt@4.13.2(magicast@0.3.5)(rollup@4.24.0)(vue@3.5.10(typescript@5.6.2))':
+    dependencies:
+      '@nuxt/kit': 3.13.2(magicast@0.3.5)(rollup@4.24.0)
+      local-pkg: 0.5.0
+      vee-validate: 4.13.2(vue@3.5.10(typescript@5.6.2))
+    transitivePeerDependencies:
+      - magicast
+      - rollup
+      - supports-color
+      - vue
+      - webpack-sources
 
   '@vee-validate/rules@4.13.2(vue@3.5.10(typescript@5.6.2))':
     dependencies:

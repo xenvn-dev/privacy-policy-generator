@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useField } from 'vee-validate'
-
 type Item = {
 	title: string
 	value: string
