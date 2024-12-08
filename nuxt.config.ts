@@ -14,7 +14,8 @@ export default defineNuxtConfig({
 		'nuxt-booster',
 		'@vee-validate/nuxt',
 		'@nuxt/eslint',
-		'vuetify-nuxt-module'
+		'vuetify-nuxt-module',
+		'@nuxthub/core',
 	],
 	css: [
 		'@fontsource/roboto/300.css',
