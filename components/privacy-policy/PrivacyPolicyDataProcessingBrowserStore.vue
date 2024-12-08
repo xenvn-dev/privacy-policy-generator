@@ -10,7 +10,7 @@ const props = defineProps({
 	},
 })
 const { humanizedDuration } = usePresenter(true)
-const t = (keypath: string) => useI18n().t(keypath, 1, { locale: props.locale })
+const t = (keypath: string) => useI18n({ useScope: 'global' }).t(keypath, 1, { locale: props.locale })
 const getDuration = (browserStore: BrowserStore) => {
 	switch (browserStore.type) {
 		case 'cookie':

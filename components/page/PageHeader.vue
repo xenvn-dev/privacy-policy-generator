@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useTheme } from 'vuetify'
 
-const { locales: availableLocales, localeProperties, } = useI18n()
+const { locales: availableLocales, localeProperties, } = useI18n({ useScope: 'global' })
 const theme = useTheme()
 const router = useRouter()
 const localePath = useLocalePath()

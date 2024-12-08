@@ -1,5 +1,5 @@
 export const usePresenter = (useSettingsLocale = false) => {
-	const { locale: currentLocale, t: i18nT } = useI18n()
+	const { locale: currentLocale, t: i18nT } = useI18n({ useScope: 'global' })
 	const durationOptions = useDurationOptions()
 	const { humanizeMinutes } = useHumanizedDuration()
 	const settings = useSettings()

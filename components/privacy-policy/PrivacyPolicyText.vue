@@ -9,7 +9,7 @@ const props = defineProps({
 const { getCountryName } = useCountries()
 
 const locale = computed(() => props.settings.general.language)
-const t = (keypath: string) => useI18n().t(keypath, 1, { locale: locale.value })
+const t = (keypath: string) => useI18n({ useScope: 'global' }).t(keypath, 1, { locale: locale.value })
 
 const usesBrowserStore = computed(() =>
 	Object.values(props.settings.dataProcessings).some(category =>

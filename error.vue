@@ -3,7 +3,7 @@ defineProps({
 	error: Object,
 })
 useColorTheme()
-const { locale: currentLocale, defaultLocale } = useI18n()
+const { locale: currentLocale, defaultLocale } = useI18n({ useScope: 'global' })
 
 const homeLink = computed(() => {
 	if (currentLocale.value === defaultLocale) {

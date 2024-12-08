@@ -22,7 +22,7 @@ const usedProcessors = useUsedProcessors()
 const presets = useDataProcessingPresets()
 const dataCategories = useDataCategories()
 const countries = useCountries()
-const { t } = useI18n()
+const { t } = useI18n({ useScope: 'global' })
 const { formOptions, processTitle, processorName } = usePresenter()
 
 const blankProcessing: DataProcessing = {

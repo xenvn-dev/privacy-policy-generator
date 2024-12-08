@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const settings = useSettings()
-const { t } = useI18n()
+const { t } = useI18n({ useScope: 'global' })
 
 const languageOptions = computed(() => [
 	{ value: 'de', title: t('settings.general.fields.language.options.de.title') },

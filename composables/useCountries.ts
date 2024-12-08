@@ -3,7 +3,7 @@ import de from 'i18n-iso-countries/langs/de.json'
 import en from 'i18n-iso-countries/langs/en.json'
 
 export const useCountries = () => {
-	const { locale: currentLocale } = useI18n()
+	const { locale: currentLocale } = useI18n({ useScope: 'global' })
 
 	i18nCountries.registerLocale(de)
 	i18nCountries.registerLocale(en)

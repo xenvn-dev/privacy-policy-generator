@@ -15,7 +15,7 @@ const props = defineProps({
 })
 const { getCountryName } = useCountries()
 const { processTitle } = usePresenter(true)
-const t = (keypath: string) => useI18n().t(keypath, 1, { locale: props.locale })
+const t = (keypath: string) => useI18n({ useScope: 'global' }).t(keypath, 1, { locale: props.locale })
 </script>
 
 <template>

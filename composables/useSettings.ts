@@ -1,5 +1,5 @@
 export const useSettings = () => {
-	const { locale } = useI18n()
+	const { locale } = useI18n({ useScope: 'global' })
 	return useState<GeneratorSettings>('settings', () => {
 		return {
 			general: {

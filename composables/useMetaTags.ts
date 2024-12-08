@@ -18,7 +18,7 @@ export const useMetaTags = () => {
 
 	const routeMeta = computed<RouteMetaOptions>(() => route.meta)
 	const { siteSettings } = useSiteSettings()
-	const { locale: currentLocale, locales: availableLocales, t, te } = useI18n()
+	const { locale: currentLocale, locales: availableLocales, t, te } = useI18n({ useScope: 'global' })
 	const switchLocalePath = useSwitchLocalePath()
 
 	const pageUrl = computed(() => siteSettings.value.baseUrl + route.path.replace(/\/$/, ''))
