@@ -180,7 +180,9 @@ const usesBrowserStore = computed(() =>
 			<p>{{ t('privacy_policy.data_processing.maps.content.p3') }}</p>
 
 			<PrivacyPolicyDataProcessings
-				:locale="settings.general.language" category="maps" :items="settings.dataProcessings.maps"
+				:locale="settings.general.language"
+				category="maps"
+				:items="settings.dataProcessings.maps"
 			/>
 		</section>
 

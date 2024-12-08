@@ -38,7 +38,17 @@ export default antfu(
 			'curly': ['error', 'all'],
 			'@stylistic/comma-dangle': 'off',
 			'vue/multi-word-component-names': 'off',
-			'vue/max-attributes-per-line': 'off',
+			'vue/max-attributes-per-line': [
+				'error',
+				{
+					singleline: {
+						max: 10
+					},
+					multiline: {
+						max: 1
+					}
+				}
+			],
 			'@typescript-eslint/no-unused-vars': 'off',
 			'no-unused-vars': 'off',
 			'vue/no-v-html': 'off',

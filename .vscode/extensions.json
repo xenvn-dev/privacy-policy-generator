@@ -4,6 +4,7 @@
 		"bradlc.vscode-tailwindcss",
 		"esbenp.prettier-vscode",
 		"dbaeumer.vscode-eslint",
-		"lokalise.i18n-ally"
+		"lokalise.i18n-ally",
+		"antfu.goto-alias"
 	]
 }

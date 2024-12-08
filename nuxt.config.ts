@@ -1,6 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
-import { fr } from 'vuetify/locale'
 import { theme } from './tailwind.config.js'
 
 export default defineNuxtConfig({
@@ -12,8 +11,9 @@ export default defineNuxtConfig({
 		'@nuxtjs/tailwindcss',
 		'@nuxtjs/sitemap',
 		'@vueuse/nuxt',
-		'@nuxt/eslint',
+		'nuxt-booster',
 		'@vee-validate/nuxt',
+		'@nuxt/eslint',
 		'vuetify-nuxt-module'
 	],
 	css: [
